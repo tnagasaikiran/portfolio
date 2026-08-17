@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Interests · Naga Sai Kiran.T</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c0f06;
+  --surface:#10140a;
+  --card:#161c0d;
+  --border:#2a3215;
+  --border2:#3a451c;
+  --lime:#c4f136;
+  --lime2:#a8d626;
+  --blue:#38bdf8;
+  --orange:#ff7b3a;
+  --red:#ff4d6d;
+  --purple:#a78bfa;
+  --text:#c9dde8;
+  --muted:#5d7d90;
+  --white:#f0f7fc;
+  --display:'Bebas Neue',sans-serif;
+  --body:'Outfit',sans-serif;
+  --mono:'Fira Code',monospace;
+  --ease:cubic-bezier(.22,.68,0,1.2);
+}
+html{scroll-behavior:smooth;font-size:14.72px}
+body{
+  background:var(--ink);
+  color:var(--text);
+  font-family:var(--body);
+  font-weight:300;
+  line-height:1.65;
+  overflow-x:hidden;
+  cursor:none;
+}
+a{color:inherit;text-decoration:none}
+
+/* CURSOR */
+.cursor-dot{width:8px;height:8px;background:var(--lime);border-radius:50%;position:fixed;z-index:9999;pointer-events:none;top:0;left:0;transform:translate(-50%,-50%);transition:transform .1s,background .3s}
+.cursor-ring{width:36px;height:36px;border:1.5px solid rgba(184,255,87,.4);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;top:0;left:0;transform:translate(-50%,-50%);transition:transform .18s var(--ease),border-color .3s,width .25s,height .25s}
+body:has(a:hover) .cursor-dot{transform:translate(-50%,-50%) scale(2.5)}
+body:has(a:hover) .cursor-ring{width:52px;height:52px;border-color:rgba(184,255,87,.6)}
+@media(pointer:coarse){.cursor-dot,.cursor-ring{display:none}body{cursor:auto}}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--lime2);border-radius:99px}
+
+/* NOISE */
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");background-size:200px 200px;opacity:.6;}
+
+/* ORBS */
+.orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;animation:drift 14s ease-in-out infinite alternate;}
+.orb1{width:500px;height:500px;background:rgba(184,255,87,.06);top:-100px;left:-100px;}
+.orb2{width:350px;height:350px;background:rgba(167,139,250,.04);bottom:0;right:-80px;animation-delay:-5s;}
+.orb3{width:280px;height:280px;background:rgba(255,77,109,.03);top:40%;left:60%;animation-delay:-9s;}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(30px,20px) scale(1.06)}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,8,11,.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(22,32,48,.8);}
+.nav-logo{font-family:var(--mono);font-size:.88rem;font-weight:600;color:var(--lime);letter-spacing:.5px;display:flex;align-items:center;gap:10px;}
+.nav-logo::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 10px var(--lime)}50%{opacity:.3;box-shadow:none}}
+/* NAV LINKS */
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;position:relative;transition:color .25s;}
+.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--lime);transition:width .3s var(--ease);}
+.nav-links a:hover,.nav-links a.active{color:var(--lime);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+@media(max-width:700px){.nav-links{display:none}}
+
+/* HERO */
+.hero{padding:130px 40px 60px;max-width:1160px;margin:0 auto;position:relative;z-index:1;}
+.hero-label{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.78rem;letter-spacing:2px;color:var(--lime);text-transform:uppercase;border:1px solid rgba(184,255,87,.25);padding:8px 16px;border-radius:99px;background:rgba(184,255,87,.06);margin-bottom:28px;animation:fadeUp .8s var(--ease) .1s both;}
+.hero-label .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:blink 1.8s infinite;}
+h1.page-title{font-family:var(--display);font-size:clamp(3.5rem,10vw,8rem);line-height:.88;color:var(--white);letter-spacing:2px;animation:fadeUp .9s var(--ease) .2s both;}
+h1.page-title .accent{color:var(--lime);}
+.hero-sub{max-width:560px;margin-top:24px;font-size:1.05rem;color:var(--muted);line-height:1.75;animation:fadeUp .9s var(--ease) .4s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@media(max-width:500px){.hero{padding:110px 24px 40px}}
+
+/* PAGE */
+.page{max-width:1160px;margin:0 auto;padding:0 40px;}
+@media(max-width:500px){.page{padding:0 24px}}
+
+/* INTEREST BLOCKS */
+.interest-block{padding:80px 0;border-top:1px solid var(--border);position:relative;z-index:1;}
+.interest-block:first-of-type{border-top:none;}
+
+.block-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+@media(max-width:860px){.block-inner{grid-template-columns:1fr;gap:36px}}
+
+/* left side */
+.block-left{}
+.block-num{font-family:var(--display);font-size:7rem;line-height:1;color:var(--border);letter-spacing:2px;transition:color .4s;}
+.interest-block:hover .block-num{color:var(--lime);}
+.block-tag{font-family:var(--mono);font-size:.72rem;color:var(--lime);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.block-tag::before{content:"";display:block;width:20px;height:1.5px;background:var(--lime);}
+h2.block-title{font-family:var(--display);font-size:clamp(2.4rem,5vw,4rem);color:var(--white);letter-spacing:1px;line-height:1;margin-bottom:20px;}
+.block-desc{font-size:1.05rem;color:var(--white);line-height:1.8;margin-bottom:24px;}
+.block-desc strong{font-weight:600;}
+
+/* status badge */
+.status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;border-radius:99px;border:1px solid;}
+.status.active{border-color:rgba(184,255,87,.4);color:var(--lime);background:rgba(184,255,87,.06);}
+.status.active::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime);animation:blink 1.8s infinite;}
+.status.learning{border-color:rgba(56,189,248,.4);color:var(--blue);background:rgba(56,189,248,.06);}
+.status.exploring{border-color:rgba(255,123,58,.4);color:var(--orange);background:rgba(255,123,58,.06);}
+
+/* right side */
+.block-right{display:flex;flex-direction:column;gap:20px;}
+
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:24px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s var(--ease);}
+.info-card:hover{border-color:var(--border2);transform:translateY(-4px);}
+.info-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:0 2px 2px 0;}
+.info-card.lime::before{background:linear-gradient(180deg,var(--lime),var(--lime2));}
+.info-card.blue::before{background:linear-gradient(180deg,var(--blue),#0ea5e9);}
+.info-card.orange::before{background:linear-gradient(180deg,var(--orange),#f97316);}
+.info-card.purple::before{background:linear-gradient(180deg,var(--purple),#8b5cf6);}
+
+.info-card h4{font-family:var(--mono);font-size:.75rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:var(--mono);font-size:.75rem;padding:6px 12px;border-radius:3px;border:1px solid var(--border2);background:rgba(255,255,255,.03);color:var(--text);transition:all .2s var(--ease);}
+.chip:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-2px);}
+.chip.hi{border-color:rgba(184,255,87,.35);color:var(--lime);background:rgba(184,255,87,.07);}
+.chip.blue-hi{border-color:rgba(56,189,248,.35);color:var(--blue);background:rgba(56,189,248,.07);}
+.chip.orange-hi{border-color:rgba(255,123,58,.35);color:var(--orange);background:rgba(255,123,58,.07);}
+.chip.purple-hi{border-color:rgba(167,139,250,.35);color:var(--purple);background:rgba(167,139,250,.07);}
+
+.progress-row{display:flex;flex-direction:column;gap:12px;}
+.progress-item{}
+.progress-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:1px;margin-bottom:6px;}
+.progress-bar{height:4px;background:var(--border);border-radius:99px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--lime),var(--lime2));animation:fillBar 1.2s var(--ease) .5s both;}
+.progress-fill.blue{background:linear-gradient(90deg,var(--blue),#0ea5e9);}
+.progress-fill.orange{background:linear-gradient(90deg,var(--orange),#f97316);}
+.progress-fill.purple{background:linear-gradient(90deg,var(--purple),#8b5cf6);}
+@keyframes fillBar{from{width:0}to{width:var(--w)}}
+
+/* achievement row */
+.ach-row{display:flex;gap:16px;flex-wrap:wrap;}
+.ach{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:16px 20px;flex:1;min-width:120px;text-align:center;transition:border-color .3s;}
+.ach:hover{border-color:var(--lime);}
+.ach .val{font-family:var(--display);font-size:2.4rem;color:var(--lime);line-height:1;}
+.ach .lbl{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+/* footer */
+footer{border-top:1px solid var(--border);padding:36px 40px;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-copy{font-family:var(--mono);font-size:.72rem;color:var(--muted);}
+.footer-link{font-family:var(--mono);font-size:.72rem;color:var(--muted);transition:color .2s;}
+.footer-link:hover{color:var(--lime);}
+@media(max-width:500px){footer{padding:28px 24px;}}
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cd"></div>
+<div class="cursor-ring" id="cr"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://nagasaikiran010.github.io/portfolio/" class="nav-logo">NSK.SEC</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="interests.html" class="active">Interests</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label"><span class="dot"></span> Deep dives & obsessions</div>
+  <h1 class="page-title">MY<br><span class="accent">INTERESTS</span></h1>
+  <p class="hero-sub">These aren't just topics I've read about — they're rabbit holes I've fallen into. Each one shapes how I think about security.</p>
+</div>
+
+<!-- ══ MALWARE ANALYSIS ══════════════════════════════════════ -->
+<div class="interest-block" id="malware">
+  <div class="page">
+    <div class="block-inner">
+      <div class="block-left reveal">
+        <div class="block-num">01</div>
+        <div class="block-tag">Static & Dynamic</div>
+        <h2 class="block-title">MALWARE ANALYSIS</h2>
+        <p class="block-desc">
+          Malware analysis is about understanding the enemy's weapons. I'm fascinated by how attackers craft malicious software — from simple droppers to sophisticated RATs and ransomware. Understanding how malware works from the inside is the best way to build defences against it.
+        </p>
+        <p class="block-desc">
+          I approach this from both the <strong>static side</strong> (reading disassembly, strings, imports) and the <strong>dynamic side</strong> (running samples in sandboxes, watching syscalls, network behaviour, registry changes).
+        </p>
+        <span class="status active">Actively Learning</span>
+      </div>
+      <div class="block-right reveal reveal-d2">
+        <div class="info-card lime">
+          <h4>Tools I Use</h4>
+          <div class="chips">
+            <span class="chip hi">PEStudio</span>
+            <span class="chip hi">Ghidra</span>
+            <span class="chip hi">x64dbg</span>
+            <span class="chip hi">Any.run</span>
+            <span class="chip">Procmon</span>
+            <span class="chip">Wireshark</span>
+            <span class="chip">Cutter</span>
+            <span class="chip">FLOSS</span>
+            <span class="chip">DIE</span>
+          </div>
+        </div>
+        <div class="info-card blue">
+          <h4>Topics Covered</h4>
+          <div class="chips">
+            <span class="chip blue-hi">PE File Format</span>
+            <span class="chip blue-hi">Packing & Obfuscation</span>
+            <span class="chip blue-hi">Anti-Analysis Tricks</span>
+            <span class="chip">Code Injection</span>
+            <span class="chip">C2 Comms</span>
+            <span class="chip">Persistence Mechanisms</span>
+            <span class="chip">Ransomware Behaviour</span>
+          </div>
+        </div>
+        <div class="info-card orange">
+          <h4>Learning Progress</h4>
+          <div class="progress-row">
+            <div class="progress-item">
+              <div class="progress-label"><span>Static Analysis</span><span>20%</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="--w:20%"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-label"><span>Dynamic Analysis</span><span>10%</span></div>
+              <div class="progress-bar"><div class="progress-fill orange" style="--w:10%"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-label"><span>Sandbox Evasion</span><span>20%</span></div>
+              <div class="progress-bar"><div class="progress-fill orange" style="--w:20%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BINARY EXPLOITATION ══════════════════════════════════ -->
+<div class="interest-block" id="binary">
+  <div class="page">
+    <div class="block-inner">
+      <div class="block-left reveal">
+        <div class="block-num">02</div>
+        <div class="block-tag">PWN / CTF</div>
+        <h2 class="block-title">BINARY EXPLOITATION</h2>
+        <p class="block-desc">
+          Binary exploitation is where security meets low-level engineering. I love the puzzle-like nature of finding and chaining together vulnerabilities in compiled binaries — stack overflows, heap corruption, format strings, and ROP chains.
+        </p>
+        <p class="block-desc">
+          I practise primarily through <strong>CTF competitions</strong> and platforms like pwn.college and picoCTF. The process of turning a crash into a shell is one of the most satisfying experiences in offensive security.
+        </p>
+        <span class="status exploring">Exploring</span>
+      </div>
+      <div class="block-right reveal reveal-d2">
+        <div class="info-card purple">
+          <h4>Techniques</h4>
+          <div class="chips">
+            <span class="chip purple-hi">Stack Buffer Overflow</span>
+            <span class="chip purple-hi">Ret2libc</span>
+            <span class="chip purple-hi">ROP Chains</span>
+            <span class="chip">Heap Exploitation</span>
+            <span class="chip">Format String Bugs</span>
+            <span class="chip">ASLR Bypass</span>
+            <span class="chip">PIE Bypass</span>
+            <span class="chip">Use-After-Free</span>
+          </div>
+        </div>
+        <div class="info-card blue">
+          <h4>Tools & Frameworks</h4>
+          <div class="chips">
+            <span class="chip blue-hi">pwntools</span>
+            <span class="chip blue-hi">GDB + PEDA</span>
+            <span class="chip blue-hi">pwndbg</span>
+            <span class="chip">ROPgadget</span>
+            <span class="chip">checksec</span>
+            <span class="chip">ltrace / strace</span>
+            <span class="chip">Ghidra</span>
+          </div>
+        </div>
+        <div class="info-card lime">
+          <h4>Platforms I Practice On</h4>
+          <div class="chips">
+            <span class="chip hi">pwn.college</span>
+            <span class="chip hi">picoCTF</span>
+            <span class="chip hi">HackTheBox</span>
+            <span class="chip">CTFtime</span>
+            <span class="chip">pwnable.kr</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REVERSE ENGINEERING ══════════════════════════════════ -->
+<div class="interest-block" id="reversing">
+  <div class="page">
+    <div class="block-inner">
+      <div class="block-left reveal">
+        <div class="block-num">03</div>
+        <div class="block-tag">IDA / Ghidra</div>
+        <h2 class="block-title">REVERSE ENGINEERING</h2>
+        <p class="block-desc">
+          Reverse engineering is the art of reading what a machine says without having the source. I'm drawn to it because it demands patience, pattern recognition, and a deep understanding of how programs actually execute — not how developers say they do.
+        </p>
+        <p class="block-desc">
+          From crackmes to firmware analysis, RE is an essential skill that bridges <strong>malware analysis, vulnerability research, and binary exploitation</strong>.
+        </p>
+        <span class="status learning">Learning</span>
+      </div>
+      <div class="block-right reveal reveal-d2">
+        <div class="info-card lime">
+          <h4>Primary Tools</h4>
+          <div class="chips">
+            <span class="chip hi">Ghidra</span>
+            <span class="chip hi">x64dbg</span>
+            <span class="chip hi">IDA Free</span>
+            <span class="chip">Binary Ninja</span>
+            <span class="chip">Cutter</span>
+            <span class="chip">radare2</span>
+            <span class="chip">objdump</span>
+          </div>
+        </div>
+        <div class="info-card orange">
+          <h4>Areas of Focus</h4>
+          <div class="chips">
+            <span class="chip orange-hi">Crackmes</span>
+            <span class="chip orange-hi">CTF Reversing</span>
+            <span class="chip orange-hi">Unpacking</span>
+            <span class="chip">Anti-debugging</span>
+            <span class="chip">Windows Internals</span>
+            <span class="chip">x86/x64 Assembly</span>
+          </div>
+        </div>
+        <div class="info-card purple">
+          <h4>Learning Progress</h4>
+          <div class="progress-row">
+            <div class="progress-item">
+              <div class="progress-label"><span>x86/x64 Assembly</span><span>10%</span></div>
+              <div class="progress-bar"><div class="progress-fill purple" style="--w:10%"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-label"><span>Ghidra / Static RE</span><span>10%</span></div>
+              <div class="progress-bar"><div class="progress-fill purple" style="--w:10%"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-label"><span>Dynamic Analysis</span><span>10%</span></div>
+              <div class="progress-bar"><div class="progress-fill purple" style="--w:10%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BUG BOUNTY ════════════════════════════════════════════ -->
+<div class="interest-block" id="bugbounty">
+  <div class="page">
+    <div class="block-inner">
+      <div class="block-left reveal">
+        <div class="block-num">04</div>
+        <div class="block-tag">Web / API</div>
+        <h2 class="block-title">BUG BOUNTY</h2>
+        <p class="block-desc">
+          Bug bounty is where curiosity meets real-world impact. Unlike CTFs, bug bounty targets are live production systems used by real people — which makes finding vulnerabilities both more challenging and more meaningful.
+        </p>
+        <p class="block-desc">
+          I focus primarily on <strong>web and API vulnerabilities</strong> — IDOR, authentication flaws, business logic bugs, and injection vulnerabilities. My work here has led to real recognition.
+        </p>
+        <span class="status active">Active Hunter</span>
+      </div>
+      <div class="block-right reveal reveal-d2">
+        <div class="ach-row">
+          <div class="ach"><div class="val">🏆</div><div class="lbl">Hall of Fame</div></div>
+          <div class="ach"><div class="val">$50</div><div class="lbl">Rewarded</div></div>
+          <div class="ach"><div class="val">RD</div><div class="lbl">Responsible Disclosure</div></div>
+        </div>
+        <div class="info-card lime">
+          <h4>Platforms I Hunt On</h4>
+          <div class="chips">
+            <span class="chip hi">HackerOne</span>
+            <span class="chip hi">Bugcrowd</span>
+            <span class="chip hi">YesWeHack</span>
+            <span class="chip hi">Intigriti</span>
+          </div>
+        </div>
+        <div class="info-card lime">
+          <h4>Platforms I Hunt On</h4>
+          <div class="chips">
+            <span class="chip hi">HackerOne</span>
+            <span class="chip hi">Bugcrowd</span>
+            <span class="chip hi">YesWeHack</span>
+            <span class="chip hi">Intigriti</span>
+            <span class="chip hi">Google</span>
+            <span class="chip hi">Microsoft</span>
+            <span class="chip">Private Programs</span>
+          </div>
+        </div>
+        <div class="info-card lime">
+          <h4>Vulnerability Types I Hunt</h4>
+          <div class="chips">
+            <span class="chip hi">IDOR</span>
+            <span class="chip hi">Authentication Bypass</span>
+            <span class="chip hi">Business Logic Flaws</span>
+            <span class="chip hi">SQL Injection</span>
+            <span class="chip">XSS</span>
+            <span class="chip">SSRF</span>
+            <span class="chip">Broken Access Control</span>
+            <span class="chip">API Security</span>
+          </div>
+        </div>
+        <div class="info-card blue">
+          <h4>Tools in My Recon Stack</h4>
+          <div class="chips">
+            <span class="chip blue-hi">Burp Suite</span>
+            <span class="chip blue-hi">Postman</span>
+            <span class="chip blue-hi">ffuf</span>
+            <span class="chip">subfinder</span>
+            <span class="chip">httpx</span>
+            <span class="chip">nuclei</span>
+            <span class="chip">amass</span>
+            <span class="chip">shodan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="margin-top:48px;position:relative;z-index:1;">
+  <div style="font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Related Sections</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="training.html" style="flex:1;min-width:180px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px;display:block;transition:border-color .3s,transform .3s var(--ease);" onmouseover="this.style.borderColor='var(--lime)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="font-family:var(--mono);font-size:.65rem;color:var(--lime);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">See also</div>
+        <div style="font-family:var(--display);font-size:1.4rem;color:var(--white);letter-spacing:.5px;">Training</div>
+        <div style="font-size:.85rem;color:var(--muted);margin-top:6px;line-height:1.5;">Platforms where I practice these interests.</div>
+      </a>
+      <a href="skills.html" style="flex:1;min-width:180px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px;display:block;transition:border-color .3s,transform .3s var(--ease);" onmouseover="this.style.borderColor='var(--lime)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="font-family:var(--mono);font-size:.65rem;color:var(--lime);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">See also</div>
+        <div style="font-family:var(--display);font-size:1.4rem;color:var(--white);letter-spacing:.5px;">Skills</div>
+        <div style="font-size:.85rem;color:var(--muted);margin-top:6px;line-height:1.5;">Tools tied to these areas — Ghidra, pwntools, Burp Suite.</div>
+      </a>
+      <a href="certifications.html" style="flex:1;min-width:180px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px;display:block;transition:border-color .3s,transform .3s var(--ease);" onmouseover="this.style.borderColor='var(--lime)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="font-family:var(--mono);font-size:.65rem;color:var(--lime);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">See also</div>
+        <div style="font-family:var(--display);font-size:1.4rem;color:var(--white);letter-spacing:.5px;">Certifications</div>
+        <div style="font-size:.85rem;color:var(--muted);margin-top:6px;line-height:1.5;">OSCP and BSCP — certs tied to these interests.</div>
+      </a>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:60px;padding-top:40px;border-top:1px solid var(--border);position:relative;z-index:1;">
+  <a href="skills.html" style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.78rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;transition:color .25s;" onmouseover="this.style.color='var(--lime)'" onmouseout="this.style.color='var(--muted)'">← Skills</a>
+  <a href="certifications.html" style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.78rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;transition:color .25s;" onmouseover="this.style.color='var(--lime)'" onmouseout="this.style.color='var(--muted)'">Certifications →</a>
+</div>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1;">
+  <div class="footer-copy">© <span id="yr"></span> Naga Sai Kiran.T · Security Analyst · Bengaluru, India</div>
+  <div class="footer-links">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="about.html" class="footer-link">About</a>
+    <a href="experience.html" class="footer-link">Experience</a>
+    <a href="skills.html" class="footer-link">Skills</a>
+    <a href="interests.html" class="footer-link">Interests</a>
+    <a href="certifications.html" class="footer-link">Certifications</a>
+    <a href="training.html" class="footer-link">Training</a>
+    <a href="contact.html" class="footer-link">Contact</a>
+  </div>
+</footer>
+
+<script>
+/* year */
+const yrEl = document.getElementById('yr');
+if(yrEl) yrEl.textContent = new Date().getFullYear();
+
+/* cursor */
+const cd = document.getElementById('cd'), cr = document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+
+/* reveal */
+const els=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+},{threshold:.1});
+els.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
