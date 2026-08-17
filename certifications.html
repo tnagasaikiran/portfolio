@@ -521,6 +521,173 @@ main { padding-top: 96px; padding-bottom: 4rem; }
   .hero { padding: 3rem 0 2rem; }
 }
 
+
+/* ---- CUSTOM CURSOR ---- */
+.cursor-glow {
+  position: fixed;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,229,160,0.4) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  mix-blend-mode: screen;
+}
+.cursor-glow.hover {
+  width: 50px; height: 50px;
+  background: radial-gradient(circle, rgba(0,229,160,0.25) 0%, transparent 70%);
+}
+.cursor-trail {
+  position: fixed;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out, opacity 0.3s;
+  opacity: 0.6;
+}
+
+/* ---- SCROLL REVEAL ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- CARD INTERACTIVE ---- */
+.card {
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 229, 160, 0.08);
+}
+
+/* ---- BADGE HOVER ---- */
+.badge {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 229, 160, 0.15);
+}
+
+/* ---- SKILL TAG INTERACTIVE ---- */
+.skill-tag {
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  cursor: default;
+}
+.skill-tag:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+/* ---- STAT HOVER ---- */
+.stat {
+  transition: border-color 0.2s, transform 0.2s;
+}
+.stat:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ---- NAV LINK UNDERLINE ---- */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after {
+  width: 100%;
+}
+
+/* ---- BUTTON GLOW ---- */
+.btn {
+  transition: all 0.2s, box-shadow 0.3s;
+}
+.btn:hover {
+  box-shadow: 0 4px 20px rgba(0, 229, 160, 0.15);
+}
+.btn-primary:hover {
+  box-shadow: 0 4px 20px rgba(0, 229, 160, 0.3);
+}
+
+/* ---- TERMINAL TYPING ---- */
+.terminal-line {
+  opacity: 0;
+  animation: termFadeIn 0.4s ease forwards;
+}
+.terminal-line:nth-child(2) { animation-delay: 0.2s; }
+.terminal-line:nth-child(3) { animation-delay: 0.4s; }
+.terminal-line:nth-child(4) { animation-delay: 0.6s; }
+.terminal-line:nth-child(5) { animation-delay: 0.8s; }
+.terminal-line:nth-child(6) { animation-delay: 1.0s; }
+.terminal-line:nth-child(7) { animation-delay: 1.2s; }
+.terminal-line:nth-child(8) { animation-delay: 1.4s; }
+.terminal-line:nth-child(9) { animation-delay: 1.6s; }
+.terminal-line:nth-child(10) { animation-delay: 1.8s; }
+
+@keyframes termFadeIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ---- CERT ITEM HOVER ---- */
+.cert-item {
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.3s;
+}
+.cert-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 229, 160, 0.06);
+}
+
+/* ---- CONTACT CARD HOVER ---- */
+.contact-card {
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.3s;
+}
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 229, 160, 0.1);
+}
+
+/* ---- TIMELINE DOT PULSE ---- */
+.timeline-item::before {
+  transition: box-shadow 0.3s;
+}
+.timeline-item:hover::before {
+  box-shadow: 0 0 12px rgba(0, 229, 160, 0.5);
+}
+
+/* ---- PROGRESS BAR ANIMATION ---- */
+.progress-fill {
+  width: 0 !important;
+  animation: none;
+}
+.progress-fill.animate {
+  transition: width 1.2s ease-out;
+}
+
+/* ---- HIDE CURSOR ON MOBILE ---- */
+@media (max-width: 768px) {
+  .cursor-glow, .cursor-trail { display: none; }
+}
+
 </style>
 </head>
 <body>
@@ -600,6 +767,80 @@ main { padding-top: 96px; padding-bottom: 4rem; }
 <footer class="footer">
   <p>&copy; Naga Sai Kiran.T · Security Analyst · Bengaluru, India</p>
 </footer>
+
+
+<script>
+// Custom cursor
+const glow = document.createElement('div');
+glow.className = 'cursor-glow';
+document.body.appendChild(glow);
+
+const trail = document.createElement('div');
+trail.className = 'cursor-trail';
+document.body.appendChild(trail);
+
+let mx = 0, my = 0, tx = 0, ty = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mx = e.clientX; my = e.clientY;
+  glow.style.left = mx + 'px';
+  glow.style.top = my + 'px';
+});
+
+function animateTrail() {
+  tx += (mx - tx) * 0.15;
+  ty += (my - ty) * 0.15;
+  trail.style.left = tx + 'px';
+  trail.style.top = ty + 'px';
+  requestAnimationFrame(animateTrail);
+}
+animateTrail();
+
+// Hover expand on interactive elements
+const hoverEls = document.querySelectorAll('a, .btn, .card, .badge, .skill-tag, .stat, .cert-item, .contact-card, .nav-links a');
+hoverEls.forEach(el => {
+  el.addEventListener('mouseenter', () => glow.classList.add('hover'));
+  el.addEventListener('mouseleave', () => glow.classList.remove('hover'));
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.section, .card, .cert-item, .timeline-item, .stat, .contact-card');
+revealEls.forEach(el => el.classList.add('reveal'));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealEls.forEach(el => observer.observe(el));
+
+// Progress bar animation
+const progressBars = document.querySelectorAll('.progress-fill');
+const progObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const targetWidth = el.getAttribute('style').match(/width:\s*(\d+)%/);
+      if (targetWidth) {
+        el.style.width = '0%';
+        el.classList.add('animate');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            el.style.setProperty('width', targetWidth[1] + '%', 'important');
+          });
+        });
+      }
+      progObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.3 });
+
+progressBars.forEach(bar => progObserver.observe(bar));
+</script>
 
 </body>
 </html>
