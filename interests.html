@@ -206,23 +206,201 @@ main{padding-top:96px;padding-bottom:4rem}
     <h1 class="section-title">What I'm Exploring</h1>
     <p class="section-desc">Beyond AppSec &mdash; the domains that sharpen how I think about security as a whole.</p>
   </div>
-  <section class="section">
-    <div class="card-grid">
-      <div class="card"><div style="margin-bottom:.75rem"><span class="badge badge-orange">Static &amp; Dynamic Analysis</span></div>
-        <h3 class="card-title">Malware Analysis</h3>
-        <p class="card-text">Dissecting malicious software to understand behaviour, uncover indicators of compromise, and build stronger defences. Exploring static analysis (disassembly, string extraction, PE header inspection) and dynamic analysis (sandboxed execution, API call monitoring, network traffic capture).</p></div>
-      <div class="card"><div style="margin-bottom:.75rem"><span class="badge badge-orange">PWN / CTF</span></div>
-        <h3 class="card-title">Binary Exploitation</h3>
-        <p class="card-text">Exploring low-level vulnerabilities such as buffer overflows, heap corruption, format string attacks, and ROP chains. Practised through HTB challenges and CTF pwn categories with real hands-on tool usage (GDB/pwndbg, pwntools).</p></div>
-      <div class="card"><div style="margin-bottom:.75rem"><span class="badge badge-yellow">IDA / Ghidra</span></div>
-        <h3 class="card-title">Reverse Engineering</h3>
-        <p class="card-text">Analysing compiled code using disassemblers and debuggers to understand program logic, identify hidden functionality, and uncover security weaknesses. Using Ghidra and IDA for static reverse engineering across CTF challenges and HTB reversing boxes.</p></div>
-      <div class="card"><div style="margin-bottom:.75rem"><span class="badge badge-green">Web / API</span></div>
-        <h3 class="card-title">Bug Bounty</h3>
-        <p class="card-text">Actively hunting real-world vulnerabilities in web applications and APIs. Earned a <strong>Hall of Fame</strong> recognition and a rewarded bounty through responsible disclosure. Focus areas: BOLA/IDOR, business logic flaws, and SSRF across production targets.</p></div>
-      <div class="card"><div style="margin-bottom:.75rem"><span class="badge badge-green">LLM / Agentic</span></div>
-        <h3 class="card-title">AI &amp; LLM Security</h3>
-        <p class="card-text">Exploring security implications of LLM-integrated and agentic AI applications &mdash; prompt injection, sensitive information disclosure, excessive agency, and tool misuse. Assessed real-world LLM applications for OWASP LLM Top 10 and Agentic Top 10 risks.</p></div>
+
+  <!-- 01 MALWARE ANALYSIS -->
+  <section class="section" style="padding:3rem 0;border-bottom:1px solid var(--border)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem">
+          <span style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--accent);opacity:0.3">01</span>
+          <span class="badge badge-orange">Static &amp; Dynamic</span>
+        </div>
+        <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px">Malware Analysis</h2>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem">Malware analysis is about understanding the enemy's weapons. I'm fascinated by how attackers craft malicious software &mdash; from simple droppers to sophisticated RATs and ransomware. Understanding how malware works from the inside is the best way to build defences against it.</p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem">I approach this from both the <strong style="color:var(--text)">static side</strong> (reading disassembly, strings, imports) and the <strong style="color:var(--text)">dynamic side</strong> (running samples in sandboxes, watching syscalls, network behaviour, registry changes).</p>
+        <span class="badge badge-green" style="padding:8px 16px;font-size:0.8rem">ACTIVELY LEARNING</span>
+      </div>
+      <div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Tools I Use</div>
+          <div class="skill-tags">
+            <span class="skill-tag">OllyDbg</span><span class="skill-tag">x64dbg</span><span class="skill-tag">Ghidra</span><span class="skill-tag">IDA Free</span><span class="skill-tag">Procmon</span><span class="skill-tag">Wireshark</span><span class="skill-tag">Cutter</span><span class="skill-tag">FLOSS</span><span class="skill-tag">DIE</span>
+          </div>
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Topics Covered</div>
+          <div class="skill-tags">
+            <span class="skill-tag">PE File Trojan</span><span class="skill-tag">Coding &amp; Obfuscation</span><span class="skill-tag">Data Exfiltration</span><span class="skill-tag">C2 Comms</span><span class="skill-tag">Persistence Mechanisms</span><span class="skill-tag">Ransomware Behaviour</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Learning Progress</div>
+          <div style="margin-bottom:.5rem">
+            <div style="display:flex;justify-content:space-between;margin-bottom:.25rem">
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--text-muted)">Static Analysis</span>
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--accent)">60%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="60%" style="width:60%;background:var(--accent)"></div></div></div>
+          <div style="margin-bottom:.5rem">
+            <div style="display:flex;justify-content:space-between;margin-bottom:.25rem">
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--text-muted)">Dynamic Analysis</span>
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--accent)">45%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="45%" style="width:45%;background:var(--accent)"></div></div></div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:.25rem">
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--text-muted)">Threat Intel</span>
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--yellow)">30%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="30%" style="width:30%;background:var(--yellow)"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 BINARY EXPLOITATION -->
+  <section class="section" style="padding:3rem 0;border-bottom:1px solid var(--border)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem">
+          <span style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--accent);opacity:0.3">02</span>
+          <span class="badge badge-orange">PWN / CTF</span>
+        </div>
+        <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px">Binary Exploitation</h2>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem">Binary exploitation is where security meets low-level engineering. I love the puzzle-like nature of finding and chaining together vulnerabilities &mdash; stack overflows, heap corruption, format strings, and ROP chains.</p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem">I practice primarily through <strong style="color:var(--text)">CTF competitions</strong> and platforms like picoCTF and pwnable.kr. The process of turning a crash into a shell is one of the most satisfying experiences in offensive security.</p>
+        <span class="badge badge-orange" style="padding:8px 16px;font-size:0.8rem">EXPLORING</span>
+      </div>
+      <div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Techniques</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Stack Buffer Overflow</span><span class="skill-tag">Ret2Libc</span><span class="skill-tag">ROP Chains</span><span class="skill-tag">Heap Exploitation</span><span class="skill-tag">Format String Bugs</span><span class="skill-tag">ASLR Bypass</span><span class="skill-tag">PIE Bypass</span><span class="skill-tag">Use After Free</span>
+          </div>
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Tools &amp; Frameworks</div>
+          <div class="skill-tags">
+            <span class="skill-tag">pwntools</span><span class="skill-tag">GDB + PEDA</span><span class="skill-tag">pwndbg</span><span class="skill-tag">ROPgadget</span><span class="skill-tag">checksec</span><span class="skill-tag">Froxen / strace</span><span class="skill-tag">Ghidra</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Platforms I Practice On</div>
+          <div class="skill-tags">
+            <span class="skill-tag">picoCTF</span><span class="skill-tag">pwnable.kr</span><span class="skill-tag">HackTheBox</span><span class="skill-tag">CTFtime</span><span class="skill-tag">pwnable.tw</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 REVERSE ENGINEERING -->
+  <section class="section" style="padding:3rem 0;border-bottom:1px solid var(--border)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem">
+          <span style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--accent);opacity:0.3">03</span>
+          <span class="badge badge-yellow">IDA / Ghidra</span>
+        </div>
+        <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px">Reverse Engineering</h2>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem">Reverse engineering is the art of reading what a machine says without having the source. I'm drawn to it because it demands patience, pattern recognition, and a deep understanding of how programs actually execute &mdash; not how developers say they do.</p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem">From crackmes to firmware analysis, RE is an essential skill that bridges <strong style="color:var(--text)">malware analysis, vulnerability research, and binary exploitation</strong>.</p>
+        <span class="badge badge-yellow" style="padding:8px 16px;font-size:0.8rem">LEARNING</span>
+      </div>
+      <div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Primary Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Ghidra</span><span class="skill-tag">IDA Free</span><span class="skill-tag">Binary Ninja</span><span class="skill-tag">Cutter</span>
+          </div>
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Areas of Focus</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Crackmes</span><span class="skill-tag">CTF Reversing</span><span class="skill-tag">Decompiling</span><span class="skill-tag">Anti-Debugging</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Learning Progress</div>
+          <div style="margin-bottom:.5rem">
+            <div style="display:flex;justify-content:space-between;margin-bottom:.25rem">
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--text-muted)">Static RE</span>
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--accent)">55%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="55%" style="width:55%;background:var(--accent)"></div></div></div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:.25rem">
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--text-muted)">Dynamic RE</span>
+              <span style="font-family:var(--font-display);font-size:0.75rem;color:var(--yellow)">35%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="35%" style="width:35%;background:var(--yellow)"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 BUG BOUNTY -->
+  <section class="section" style="padding:3rem 0;border-bottom:1px solid var(--border)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem">
+          <span style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--accent);opacity:0.3">04</span>
+          <span class="badge badge-green">Web / API</span>
+        </div>
+        <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px">Bug Bounty</h2>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem">Bug bounty is where curiosity meets real-world impact. Unlike CTFs, bug bounty targets are production systems used by real people &mdash; which makes finding vulnerabilities both more challenging and more meaningful.</p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem">I focus primarily on <strong style="color:var(--text)">web and API vulnerabilities</strong> &mdash; IDOR, authentication flaws, business logic bugs, and injection vulnerabilities. My work here has earned a <strong style="color:var(--accent)">Hall of Fame</strong> recognition and a rewarded disclosure.</p>
+      </div>
+      <div>
+        <div style="display:flex;gap:1rem;margin-bottom:1.5rem">
+          <div class="stat" style="flex:1"><div class="stat-value" style="font-size:1.5rem">HoF</div><div class="stat-label">Hall of Fame</div></div>
+          <div class="stat" style="flex:1"><div class="stat-value" style="font-size:1.5rem">$</div><div class="stat-label">Rewarded</div></div>
+          <div class="stat" style="flex:1"><div class="stat-value" style="font-size:1.5rem">RD</div><div class="stat-label">Responsible Disclosure</div></div>
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Platforms I Hunt On</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HackerOne</span><span class="skill-tag">Bugcrowd</span><span class="skill-tag">YesWeHack</span><span class="skill-tag">Intigriti</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Focus Areas</div>
+          <div class="skill-tags">
+            <span class="skill-tag">BOLA / IDOR</span><span class="skill-tag">Business Logic</span><span class="skill-tag">SSRF</span><span class="skill-tag">Auth Bypass</span><span class="skill-tag">Injection</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 AI & LLM SECURITY -->
+  <section class="section" style="padding:3rem 0">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem">
+          <span style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--accent);opacity:0.3">05</span>
+          <span class="badge badge-green">LLM / Agentic</span>
+        </div>
+        <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px">AI &amp; LLM Security</h2>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem">Exploring the security implications of LLM-integrated and agentic AI applications. As AI systems gain autonomy &mdash; executing tools, managing memory, communicating with other agents &mdash; the attack surface expands in ways traditional AppSec hasn't fully addressed yet.</p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem">I've assessed real-world LLM applications for prompt injection, sensitive information disclosure, and excessive agency. I also use <strong style="color:var(--text)">agentic AI daily</strong> as a productivity multiplier for recon, triage, and reporting.</p>
+        <span class="badge badge-green" style="padding:8px 16px;font-size:0.8rem">ACTIVELY EXPLORING</span>
+      </div>
+      <div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Frameworks Studied</div>
+          <div class="skill-tags">
+            <span class="skill-tag">OWASP LLM Top 10 (2025)</span><span class="skill-tag">OWASP Agentic Top 10 (2026)</span>
+          </div>
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Vulnerability Classes Tested</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Prompt Injection</span><span class="skill-tag">SSRF via LLM</span><span class="skill-tag">Sensitive Info Disclosure</span><span class="skill-tag">Excessive Agency</span><span class="skill-tag">Tool Misuse</span><span class="skill-tag">System Prompt Leakage</span><span class="skill-tag">Improper Output Handling</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-title" style="font-size:0.7rem;margin-bottom:.75rem">Tools &amp; Workflow</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Claude</span><span class="skill-tag">Gemini</span><span class="skill-tag">Burp Suite</span><span class="skill-tag">Manual Prompt Testing</span><span class="skill-tag">MCP Security Assessment</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
